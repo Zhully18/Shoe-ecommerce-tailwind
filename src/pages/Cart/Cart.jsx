@@ -6,7 +6,7 @@ import { FiTrash2 } from "react-icons/fi";
 import { ShopContext } from "../../Context/ShopContext";
 
 const Cart = () => {
-  const { cart, clearCart, total, itemAmount } = useContext(ShopContext);
+  const { cart, clearCart, total, quantity } = useContext(ShopContext);
 
   console.log("Cart:", cart);
   return (
@@ -14,7 +14,7 @@ const Cart = () => {
       <div className="w-2/3 bg-white p-5 mt-5">
         <div className="flex justify-between font-bold">
           <h1>Shopping Cart</h1>
-          <h1>Items: {itemAmount}</h1>
+          <h1>Items: {quantity}</h1>
           <FiTrash2 onClick={clearCart} className="text-xl cursor-pointer" />
         </div>
         <div className="flex justify-between mt-5 font-bold">
@@ -35,7 +35,7 @@ const Cart = () => {
         <h2 className="text-lg font-bold mb-5">Cart Summary</h2>
         <div className="flex justify-between mb-3">
           <span>Items:</span>
-          <span>{itemAmount}</span>
+          <span>{quantity}</span>
         </div>
         <div className="mb-5">
           <div className="flex justify-between">

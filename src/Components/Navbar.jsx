@@ -14,8 +14,8 @@ const Navbar = () => {
   // Destructure values from ShopContext
 // `searchProducts`: function to filter products based on search query
 // `setHeroVisible`: function to show/hide the hero section
-// `itemAmount`: the total number of items in the cart
-const { searchProducts, itemAmount } = useContext(ShopContext);
+// `quantity`: the total number of items in the cart
+const { searchProducts, quantity } = useContext(ShopContext);
 
 // State to store the current search query
 const [query, setQuery] = useState('');
@@ -46,7 +46,7 @@ const handleSearch = (e) => {
         <Link to="/cart" className="relative">
           <BiCart className="text-3xl text-white" />
           <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full">
-            {itemAmount}
+            {quantity}
           </span>
         </Link>
         <BiUser className="text-3xl text-white" />
